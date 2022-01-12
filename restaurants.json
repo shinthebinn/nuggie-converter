@@ -1,11 +1,17 @@
 {
 	"mcdonalds" : {
-		"ppn" : 0.6,
+		"price" : {
+			"individual" : 0.5,
+			"meal" : 2
+		},
 		"npm" : 4,
 		"name" : "mcdonalds"
 	},
 	"wendys" : {
-		"ppn": 0.5,
+		"price" : {
+			"individual" : 0.25,
+			"meal" : 1
+		},
 		"npm" : 4,
 		"name" : "wendys"
 	}
