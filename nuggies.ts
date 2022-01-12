@@ -10,7 +10,7 @@ interface conversionFormat {
 	(restaurant: string, quantity: number): number;
 }
 
-const nuggiesToUSD: conversionFormat = (restaurant: string, quantity: number) => {
+export const nuggiesToUSD: conversionFormat = (restaurant: string, quantity: number) => {
 	let restaurantData: chainData = restaurants[restaurant];
 	if (!restaurantData) {
 		return -1
@@ -19,7 +19,7 @@ const nuggiesToUSD: conversionFormat = (restaurant: string, quantity: number) =>
 	return restaurantData.ppn * quantity;
 } 
 
-const USDtoNuggies: conversionFormat = (restaurant: string, money: number) => {
+export const USDToNuggies: conversionFormat = (restaurant: string, money: number) => {
 	let restaurantData: chainData = restaurants[restaurant];
 	if (!restaurantData) {
 		return -1
@@ -27,6 +27,3 @@ const USDtoNuggies: conversionFormat = (restaurant: string, money: number) => {
 
 	return money / restaurantData.ppn
 }
-
-exports.nuggiesToUSD = nuggiesToUSD;
-exports.USDtoNuggies = USDtoNuggies

@@ -1,1 +1,1 @@
-const nugs = require('./nuggies')
+import { nuggiesToUSD, USDToNuggies } from './nuggies'
