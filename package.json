@@ -1,0 +1,17 @@
+{
+  "name": "nuggie-converter",
+  "version": "1.0.0",
+  "description": "All prices are based on the 4-piece from the respective chain or the equivalent lowest amount of nuggies",
+  "main": "index.js",
+  "dependencies": {
+    "typescript": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
