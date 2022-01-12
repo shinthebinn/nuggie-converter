@@ -4,7 +4,7 @@
 			"individual" : 0.5,
 			"meal" : 2
 		},
-		"npm" : 4,
+		"count" : 4,
 		"name" : "mcdonalds"
 	},
 	"wendys" : {
@@ -12,7 +12,7 @@
 			"individual" : 0.25,
 			"meal" : 1
 		},
-		"npm" : 4,
+		"count" : 4,
 		"name" : "wendys"
 	}
 }

@@ -1,5 +1,14 @@
-function Home() {
-    return <p>amoga</p>;
+export default function Home({ data }) {
+    return <p>{data.mcdonalds.name}</p>;
 }
 
-export default Home;
+export async function getStaticProps(context) {
+    const res = await fetch('http://localhost:3000/api/manifest');
+    const data = await res.json();
+
+    return {
+        props: {
+            data
+        }
+    }
+}
