@@ -5,7 +5,7 @@
 		"name" : "mcdonalds"
 	},
 	"wendys" : {
-		"ppn": 0.25,
+		"ppn": 0.5,
 		"npm" : 4,
 		"name" : "wendys"
 	}
