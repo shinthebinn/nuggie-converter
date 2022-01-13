@@ -14,5 +14,37 @@
 		},
 		"count" : 4,
 		"name" : "wendys"
+	},
+	"burgerking" : {
+		"price" : {
+			"individual" : 0.35,
+			"meal" : 1.4
+		},
+		"count" : 4,
+		"name" : "burgerking"
+	},
+	"chickfila" : {
+		"price" : {
+			"individual" : 0.58,
+			"meal" : 2.90	
+		},
+		"count" : 5,
+		"name" : "chickfila"
+	},
+	"kfc" : {
+		"price" : {
+			"individual" : 0.35,
+			"meal" : 3.50
+		},
+		"count" : 10,
+		"name" : "kfc"
+	},
+	"popeyes" : {
+		"price" : {
+			"individual" : 0.5,
+			"meal" : 4.00
+		},
+		"count" : 8,
+		"name" : "popeyes"
 	}
 }
