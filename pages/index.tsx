@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import DropdownMenu from '../components/DropdownMenu';
-import { nuggiesToUSD, USDToNuggies } from './../functions/nuggieQuery'
+import { nuggiesToUSD, USDToNuggies, dataQuery } from './../functions/nuggieQuery'
 
 export default function Home({ data }) {
 	let mData = data.default;
@@ -43,8 +43,7 @@ export default function Home({ data }) {
 }
 
 export async function getServerSideProps(context) {
-    const res = await fetch('http://localhost:3000/api/manifest');
-    const data = await res.json();
+    const data = await dataQuery();
 
     return {
         props: {
