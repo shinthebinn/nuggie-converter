@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { nuggiesToUSD, USDToNuggies } from './../functions/nuggieQuery'
 
 export default function Home({ data }) {
 		let mData = data.default;
 		let restaurants: string[] = Object.entries(mData).map(([key, value]) => key)
 
-		const [dropdownVal, changeDropdownVal] = useState('');
+		const [restaurant, changeRestaurant] = useState('');
+		const [convertFrom, changeConvertFrom] = useState('');
 		const [count, setCount] = useState();
 		const [response, changeResponse] = useState('');
 
@@ -12,12 +14,9 @@ export default function Home({ data }) {
 			e.preventDefault();
 			changeResponse('loading...');
 
-			let requestURL = `http://localhost:3000/api/conversion?from=nugs&chain=${dropdownVal}&count=${count}`;
-			//changeResponse(requestURL);
-			let res = await fetch(requestURL);
-			let data = await res.json();
+			let result = (convertFrom == "usd") ? USDToNuggies(restaurant, count) : nuggiesToUSD(restaurant, count)
 
-			changeResponse(data.price);
+			changeResponse((convertFrom == "usd") ? `${result} nuggies` : `\$${result}`);
 		}
 
 
@@ -26,11 +25,16 @@ export default function Home({ data }) {
 			<div>
 				<p>{response}</p>
 				<form onSubmit={handleSubmit}>
-					<select onChange={(e) => changeDropdownVal(e.target.value)}>
-						<option value={undefined}>select an option:</option>
+					<select onChange={(e) => changeConvertFrom(e.target.value)}>
+						<option value={undefined}>select conversion:</option>
+						<option value="nugs">Nuggies to USD</option>
+						<option value="usd">USD to Nuggies</option>
+					</select>
+					<select onChange={(e) => changeRestaurant(e.target.value)}>
+						<option value={undefined}>select a restaurant:</option>
 						{restaurants.map((i) => <option value={i}>{i}</option>)}
 					</select>
-					<input type="number" placeholder="nuggie count" value={count} onChange={(e) => setCount(e.target.value)}/>
+					<input type="number" step="0.01" placeholder="nuggie count/money in usd" value={count} onChange={(e) => setCount(e.target.value)}/>
 					<input type="submit"/>
 				</form>
 			</div>
