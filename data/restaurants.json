@@ -1,0 +1,18 @@
+{
+	"mcdonalds" : {
+		"price" : {
+			"individual" : 0.5,
+			"meal" : 2
+		},
+		"count" : 4,
+		"name" : "mcdonalds"
+	},
+	"wendys" : {
+		"price" : {
+			"individual" : 0.25,
+			"meal" : 1
+		},
+		"count" : 4,
+		"name" : "wendys"
+	}
+}
