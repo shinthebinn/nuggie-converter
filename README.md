@@ -14,7 +14,7 @@ You can also get data for specific restaurants by adding a `/[restaurant]` after
 
 ## Conversion
 
-The [conversion endpoint](https://nuggies.shinthebin.ml/conversion) lets you convert nuggies to USD and USD to nuggies painlessly. This url takes 3 query arguments that should be added in the url with standard syntax:
+The [/api/conversion](https://nuggies.shinthebin.ml/conversion) endpoint lets you convert nuggies to USD and USD to nuggies painlessly. This url takes 3 query arguments that should be added in the url with standard syntax:
 
 - **from** - Only takes two different strings as arguments, `nugs` or `usd`. This query specifies which conversion method to use. `from=nugs` is nuggies to USD, and `from=usd` is the inverse.
 - **chain** - The specified restaurant you would like to use metrics from. Using an unsupported restaurant will return `-1` as the price.
