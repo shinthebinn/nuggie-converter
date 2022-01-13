@@ -31,6 +31,8 @@ export default function Home({ data }) {
 
     return (
 		<div>
+			<h1>CHICKEN NUGGET CONVERTER</h1>
+			<hr /> <br />
 			<p>{response}</p>
 			<form onSubmit={handleSubmit}>
 				<DropdownMenu items={conversionItems} onChange={(val) => changeConvertFrom(val)} undefinedString='conversion'/>
