@@ -12,11 +12,12 @@ export default function Home({ data }) {
 			e.preventDefault();
 			changeResponse('loading...');
 
-			let requestURL = `http://localhost:3001/api/conversion?from=nugs&chain=${dropdownVal}&count=${count}`;
-			changeResponse(requestURL);
-			//fetch(requestURL)
-			//	.then((res) => res.json)
-			//	.then((data) => changeResponse(`\$${data.price}`));
+			let requestURL = `http://localhost:3000/api/conversion?from=nugs&chain=${dropdownVal}&count=${count}`;
+			//changeResponse(requestURL);
+			let res = await fetch(requestURL);
+			let data = await res.json();
+
+			changeResponse(data.price);
 		}
 
 
@@ -25,7 +26,8 @@ export default function Home({ data }) {
 			<div>
 				<p>{response}</p>
 				<form onSubmit={handleSubmit}>
-					<select defaultValue={dropdownVal} onChange={(e) => changeDropdownVal(e.target.value)}>
+					<select onChange={(e) => changeDropdownVal(e.target.value)}>
+						<option value={undefined}>select an option:</option>
 						{restaurants.map((i) => <option value={i}>{i}</option>)}
 					</select>
 					<input type="number" placeholder="nuggie count" value={count} onChange={(e) => setCount(e.target.value)}/>
