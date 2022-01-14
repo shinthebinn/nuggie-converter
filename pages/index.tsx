@@ -3,7 +3,7 @@ import DropdownMenu from '../components/DropdownMenu';
 import { nuggiesToUSD, USDToNuggies, dataQuery } from './../functions/nuggieQuery'
 
 export default function Home({ data }) {
-	let mData = data.default;
+	let mData = data;
 	let restaurants: string[] = Object.entries(mData).map(([key, value]) => key)
 	let temp: any;
 
@@ -36,7 +36,7 @@ export default function Home({ data }) {
 			<p>{response}</p>
 			<form onSubmit={handleSubmit}>
 				<DropdownMenu items={conversionItems} onChange={(val) => changeConvertFrom(val)} undefinedString='conversion'/>
-				<DropdownMenu items={restaurantItems} onChange={(val) => changeChain(val)} undefinedString='a restaurant'/>
+				<DropdownMenu items={restaurantItems} onChange={(val) => changeChain(val)} undefinedString='a nugget'/>
 				<input type="number" step="0.01" placeholder="nuggie count/money in usd" value={count} onChange={(e) => setCount(e.target.value)}/>
 				<input type="submit"/>
 			</form>

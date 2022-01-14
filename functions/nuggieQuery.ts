@@ -1,4 +1,4 @@
-import * as nugData from '../data/restaurants.json'
+import nugData from '../data/restaurants.json'
 
 interface chainData {
     "price": {
@@ -18,7 +18,9 @@ export const nuggiesToUSD: queryFormat = (restaurant, quantity) => {
 
     if (!restaurantData) return -1;
 
-    return restaurantData.price.individual * quantity
+    let result = restaurantData.price.individual * quantity
+
+		return result.toFixed(2);
 }
 
 export const USDToNuggies: queryFormat = (restaurant, money) => {
@@ -26,7 +28,9 @@ export const USDToNuggies: queryFormat = (restaurant, money) => {
 
     if (!restaurantData) return -1;
 
-    return money / restaurantData.price.individual
+    let result = money / restaurantData.price.individual;
+
+		return Math.floor(result);
 }
 
 export const chainQuery: queryFormat = (restaurant) => {
