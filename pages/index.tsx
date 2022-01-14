@@ -3,7 +3,7 @@ import DropdownMenu from '../components/DropdownMenu';
 import { nuggiesToUSD, USDToNuggies, dataQuery } from './../functions/nuggieQuery'
 
 export default function Home({ data }) {
-	let mData = data.default;
+	let mData = data;
 	let restaurants: string[] = Object.entries(mData).map(([key, value]) => key)
 	let temp: any;
 
