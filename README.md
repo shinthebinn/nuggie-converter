@@ -1,6 +1,6 @@
 # Prices
 
-All prices are currently based on the 4-piece from the respective chain or the equivalent lowest amount of nuggies. Plan is to add multiple prices and combos after the base is finished.
+All prices are currently based on the 4-piece from the respective chain or the equivalent lowest amount of nuggies. Plan is to add multiple prices and combos after the base is finished. 
 
 # API Docs
 
@@ -19,3 +19,8 @@ The [/api/conversion](https://nuggies.shinthebin.ml/conversion) endpoint lets yo
 - **from** - Only takes two different strings as arguments, `nugs` or `usd`. This query specifies which conversion method to use. `from=nugs` is nuggies to USD, and `from=usd` is the inverse.
 - **chain** - The specified restaurant you would like to use metrics from. Using an unsupported restaurant will return `-1` as the price.
 - [optional] **count** - How many nuggies or how much money to convert to the other metric. If left unspecified will default to `1`.
+
+
+# Disclaimer
+
+The prices shown in this program are not accurate and are simply approximations of the value. Some prices may be closer in value than others. This program is not meant to be a reliable source of information and should not be used as such.
